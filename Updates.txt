@@ -1,0 +1,30 @@
+Version 1.1
+	17 Sep 2002
+	Version 1.1 public release
+
+Version 1.1.1
+	7 Oct 2002
+	Correction of minor mistake in Infospec function for energy based significant wave height calculation.
+
+Version 1.1.2
+	9 Oct 2002
+	Correction of spectral density scaling which gave incorrect significant wave height calculation. Fix of bug in transfer functions for subsurface datatypes ('velx','vely','velz','pres') where hyperbolic functions "blew up" in large depths and gave a NaN transfer value.
+
+Version 1.2
+	29 Aug 2006
+	Change to license - removal of restrictions, update to standard GNU public license.
+
+Version 1.3
+	31 Jan 2008
+	Improved spectral matrix interpolation
+	Addition of new function diwasp_csd that removes need for Mathworks signal processing toolbox.
+	Addition of variable units for spectral matrix frequency and direction
+	Changes to plotspec function for nautical directions
+
+Version 1.3.1
+	26 Feb 2008
+	Bugfix in diwasp_csd to correctly return cross power spectral density
+
+
+	
+	
