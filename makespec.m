@@ -94,6 +94,7 @@ pause
 disp('writing spectrum matrix to file');
 writespec(SM,'specmat.spec');
 
+if nargin<7 || ndat<=0;return;end;
 wns=wavenumber(omg,ID.depth*ones(size(omg)));
 eamp=sqrt(2.0*df*spec);
 
