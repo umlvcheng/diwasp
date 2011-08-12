@@ -1,4 +1,4 @@
-function [H,Tp,DTp,Dp]=infospec(SM)
+function [H,Tp,DTp,Dp]=infospec(SM,fsplit)
 
 %DIWASP V1.1 function
 %infospec: calculates and displays information about a directional spectrum
