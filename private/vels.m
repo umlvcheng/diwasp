@@ -1,3 +1,3 @@
 function trm=vels(ffreqs,dirs,wns,z,depth)
 
-trm=(-i*ffreqs)*ones(size(dirs));
+trm=velz(ffreqs,dirs,wns,depth,depth);

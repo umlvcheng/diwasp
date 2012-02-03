@@ -13,10 +13,8 @@ function Hs=Hsig(varargin)
 if nargin==1
     SM=varargin{1};
     df=SM.freqs(2)-SM.freqs(1);ddir=SM.dirs(2)-SM.dirs(1);S=SM.S;
-    if SM.dirs(1)==SM.dirs(end);S=S(:,1:end-1);end
 elseif nargin==3
     df=varargin{2};ddir=varargin{3};S=varargin{1};
 end
-
 
 Hs=4*sqrt(sum(sum(real(S)))*df*ddir);
