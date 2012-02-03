@@ -1,6 +1,6 @@
 function plotspec(SM,ptype);
 
-%DIWASP V1.3 function
+%DIWASP V1.4 function
 %plotspec: plots the spectral matrix in 3D or polar form
 %
 %plotspec(SM,ptype)

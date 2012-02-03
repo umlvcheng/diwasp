@@ -1,6 +1,6 @@
 function [SMout,EP]=dirspec(ID,SM,EP,varargin)
 
-%DIWASP V1.3 function
+%DIWASP V1.4 function
 %dirspec: main spectral estimation routine
 %
 %[SMout,EPout]=dirspec(ID,SM,EP,{options})
@@ -103,16 +103,16 @@ for m=1:szd
    Ss(m,:)=Sxps./(max(tfn').*conj(max(tfn')));
 end
 
-ffs=sum(F<=max(SM.freqs));
-SM1.freqs=F(1:ffs);
+ffs=(F>=min(SM.freqs) & F<=max(SM.freqs));
+SM1.freqs=F(ffs);
 SM1.funit='Hz';
 SM1.dirs=pidirs;
 SM1.dunit='rad';
 
 % call appropriate estimation function
 disp(['directional spectra using' blanks(1) EP.method ' method']);disp(' ');
-SM1.S=feval(EP.method,xps(:,:,1:ffs),trm(:,1:ffs,:),kx(:,:,1:ffs,:),Ss(:,1:ffs),pidirs,EP.iter,displ);
-SM1.S(isnan(SM1.S))=0.;
+SM1.S=feval(EP.method,xps(:,:,ffs),trm(:,ffs,:),kx(:,:,ffs,:),Ss(:,ffs),pidirs,EP.iter,displ);
+SM1.S(isnan(SM1.S) | SM1.S<0)=0.;
 
 %Interpolate onto user specified matrix
 disp(' ');disp('interpolating onto specified matrix...');disp(' ');

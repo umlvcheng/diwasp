@@ -1,6 +1,6 @@
 function [SM]=readspec(filename,funit,dunit)
 
-%DIWASP V1.1 function
+%DIWASP V1.4 function
 %readspec: reads in spectrum file in DIWASP format and displays surface plot
 %
 %[SM]=readspec(filename)

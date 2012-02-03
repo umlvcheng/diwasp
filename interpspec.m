@@ -1,6 +1,6 @@
 function SMout=interpspec(SMin,SMout)
 
-%DIWASP V1.3 function
+%DIWASP V1.4 function
 %interpspec: interpolates between spectral matrix bases
 %
 %SMout=interpspec(SMin,SMout)
@@ -17,7 +17,7 @@ function SMout=interpspec(SMin,SMout)
 %
 %"help data_structures" for information on the DIWASP data structures
 
-Hs1=hsig(SMin);
+Hs1=hsig(SMin)
 
 [SMin,facin]=spectobasis(SMin);
 [SMtmp,facout]=spectobasis(SMout);

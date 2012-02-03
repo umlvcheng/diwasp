@@ -1,6 +1,6 @@
 function writespec(SM,filename)
 
-%DIWASP V1.1 function
+%DIWASP V1.4 function
 %writespec: writes spectrum matrix to file using DIWASP format
 %
 %writespec(SM,filename)

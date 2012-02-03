@@ -1,6 +1,6 @@
 function [SM,ID]= makespec(freqlph,theta,spread,weights,Ho,ID,ndat,noise)
 
-%DIWASP V1.1 function
+%DIWASP V1.4 function
 %makespec: generates a directional wave spectra and pseudo data from the spectra
 %
 %[SM,IDout]=makespec(freqlph,theta,spread,weights,Ho,ID,ndat,noise)

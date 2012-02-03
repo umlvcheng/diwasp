@@ -1,6 +1,6 @@
 function [H,Tp,DTp,Dp]=infospec(SM,fsplit)
 
-%DIWASP V1.1 function
+%DIWASP V1.4 function
 %infospec: calculates and displays information about a directional spectrum
 %
 %[Hsig,Tp,DTp,Dp]=infospec(SM)
@@ -43,6 +43,4 @@ disp(['Dominant direction: ' num2str(Dp) ' axis angle / ' num2str(compangle(Dp,S
 
 
 function dirs=compangle(dirs,xaxisdir)
-dirs=xaxisdir*ones(size(dirs))-dirs;
-dirs=dirs+360*(dirs<0);
-dirs=dirs-360*(dirs>360);
+dirs=mod(180+xaxisdir*ones(size(dirs))-dirs,360);

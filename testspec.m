@@ -1,6 +1,6 @@
 function EP=testspec(ID,theta,spread,weights,EP);
 
-%DIWASP V1.1 function
+%DIWASP V1.4 function
 %testspec: Testing routine for directional wave spectrum estimation methods
 %
 %[EPout] = testspec(ID,theta,spread,weights,EP)

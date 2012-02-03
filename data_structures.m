@@ -1,4 +1,4 @@
-%DIWASP Version 1.1 help file
+%DIWASP Version 1.4 help file
 %This describes the three structures used in DIWASP functions
 %
 %The input data structure(ID) contains fields:
@@ -11,8 +11,13 @@
 %                   'velx'	x component velocity
 %                   'vely'	y component velocity
 %                   'velz'	z component velocity
-%                   'vels'	vertical velocity of surface
-%				    'accs'	vertical acceleration of surface
+%                   'vels'  surface vertical velocity
+%				    'accx'	x component acceleration
+%                   'accy'  y component acceleration
+%                   'accz'  z component acceleration
+%                   'accs'  surface vertical acceleration
+%                   'dspx'  x component displacement
+%                   'dspy'  y component displacement
 %				    'slpx'	x component surface slope
 %				    'slpy'	y component surface slope
 % ID.depth         mean overall depth of measurement area (m)
