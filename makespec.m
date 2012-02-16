@@ -15,7 +15,7 @@ function [SM,ID]= makespec(freqlph,theta,spread,weights,Ho,ID,ndat,noise)
 %theta      vector with the mean directions of a sea state component
 %spread    	vector with the spreading parameters of a sea state component 
 %weights  	vector with relative weights of sea state components
-%Ho			RMS wave height for generated spectrum
+%Hrms		Significant wave height for generated spectrum
 %ID			Instrument data structure; field ID.data is ignored
 %ndat       length of simulated data
 %noise      level of simulated noise: 
@@ -81,7 +81,7 @@ for i=1:ncom
 end
 
 spec=(ETMA*Gg);
-fac=Ho/(sqrt(8*sum(sum(spec))*df*ddir*(180/pi)));
+fac=Ho/(4*sqrt(sum(sum(spec))*df*ddir*(180/pi)));
 spec=fac*fac*spec;
 
 SM.freqs=ffreqs;SM.dirs=(180/pi)*dirs;SM.S=spec;SM.xaxisdir=90;
@@ -96,7 +96,7 @@ writespec(SM,'specmat.spec');
 
 if nargin<7 || ndat<=0;return;end;
 wns=wavenumber(omg,ID.depth*ones(size(omg)));
-eamp=sqrt(2.0*df*spec);
+eamp=sqrt(2.0*df*spec*(180/pi)*ddir);
 
 data=makewavedata(eamp,omg,wns,dirs,ID.layout,ID.datatypes,ID.depth,ID.fs,ndat);
 
