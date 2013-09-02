@@ -32,15 +32,7 @@ function [SM,ID]= makespec(freqlph,theta,spread,weights,Ho,ID,ndat,noise)
 
 %Copyright (C) 2002 Coastal Oceanography Group, CWR, UWA, Perth
 
-%Updated by r.guedes on 29/04/2013: SM declared before running check_data
-%to avoid "non-assignment error" in case return is reached
-
-SM = [];
-
-ID=check_data(ID,1);
-if isempty(ID)
-    return
-end
+ID=check_data(ID,1);if isempty(ID) return;end;
 
 %setup default values
 dt=0.5;g=9.806;
