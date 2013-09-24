@@ -45,15 +45,15 @@ SM=check_data(SM,2);if isempty(SM) return;end;
 EP=check_data(EP,3);if isempty(EP) return;end;
 
 if ~isempty(nopts)
-if(rem(nopts,2)~=0)
-   	warning('Options must be in Name/Value pairs - setting to defaults');
-else
-   	for i=1:(nopts/2)
-      	arg=varargin{1}{(2*i)};
-      	field=varargin{1}{(2*i-1)};
-      	Options=setfield(Options,field,arg);
-    end;
-end   
+    if(rem(nopts,2)~=0)
+        warning('Options must be in Name/Value pairs - setting to defaults');
+    else
+        for i=1:(nopts/2)
+            arg=varargin{1}{(2*i)};
+            field=varargin{1}{(2*i-1)};
+            Options=setfield(Options,field,arg);
+        end;
+    end
 end
 
 ptype=Options.PLOTTYPE;displ=Options.MESSAGE;
@@ -74,10 +74,10 @@ if nfft>ndat;error(['Data length of ' num2str(ndat) ' too small']);end
     
 %calculate the cross-power spectra
 for m=1:szd
-for n=1:szd
-   [xpstmp,Ftmp]=diwasp_csd(data(:,m),data(:,n),nfft,ID.fs);
-   xps(m,n,:)=xpstmp(2:(nfft/2)+1);
- end
+    for n=1:szd
+        [xpstmp,Ftmp]=diwasp_csd(data(:,m),data(:,n),nfft,ID.fs);
+        xps(m,n,:)=xpstmp(2:(nfft/2)+1);
+    end
 end
 
 F=Ftmp(2:(nfft/2)+1);nf=nfft/2;
@@ -91,10 +91,10 @@ pidirs=[-pi:(2*pi/EP.dres):pi-(2*pi/EP.dres)];
 disp('transfer parameters');
 disp(' ');
 for m=1:szd
-	trm(m,:,:)=feval(ID.datatypes{m},2*pi*F,pidirs,wns,ID.layout(3,m),ID.depth);
- for n=1:szd
-    kx(m,n,:,:)=wns*((ID.layout(1,n)-ID.layout(1,m))*cos(pidirs)+(ID.layout(2,n)-ID.layout(2,m))*sin(pidirs));
-end
+    trm(m,:,:)=feval(ID.datatypes{m},2*pi*F,pidirs,wns,ID.layout(3,m),ID.depth);
+    for n=1:szd
+        kx(m,n,:,:)=wns*((ID.layout(1,n)-ID.layout(1,m))*cos(pidirs)+(ID.layout(2,n)-ID.layout(2,m))*sin(pidirs));
+    end
 end
 
 for m=1:szd
