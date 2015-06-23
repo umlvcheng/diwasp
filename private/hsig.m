@@ -1,4 +1,4 @@
-function Hs=Hsig(varargin)
+function Hs=hsig(varargin)
 %DIWASP function to calculate significant wave height
 %
 %Hs=Hsig(SM)
