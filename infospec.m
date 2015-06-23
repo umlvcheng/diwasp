@@ -24,7 +24,7 @@ function [H,Tp,DTp,Dp]=infospec(SM,fsplit)
 
 SM=check_data(SM,2);if isempty(SM) return;end;
 
-H=HSig(SM);
+H=hsig(SM);
 
 S=sum(real(SM.S),2);
 
