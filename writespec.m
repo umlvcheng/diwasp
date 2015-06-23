@@ -30,6 +30,7 @@ streamout(nf+nd+5:nf+nd+4+(nf*nd))=reshape(real(SM.S'),nf*nd,1);
 
 streamout=streamout';
 
-eval(['save ',filename,' streamout -ASCII']);
+save(filename,'-ASCII','streamout')
+
 
 

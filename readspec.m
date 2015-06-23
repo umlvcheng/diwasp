@@ -34,4 +34,4 @@ mat=datain(nfreq+ndirs+5:nfreq+ndirs+4+(nfreq*ndirs));
 S=reshape(mat,ndirs,nfreq);
 SM.S=S';
 
-plotspec(SM,1);
+%plotspec(SM,1);
