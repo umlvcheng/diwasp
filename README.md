@@ -1,6 +1,6 @@
 # diwasp
 DIWASP: DIrectional WAve SPectrum analysis
-Version 1.1
+Version 1.4
 
 ## Toolbox contents:
 ### Main functions:
