@@ -1,4 +1,4 @@
-function trm=dspx(ffreqs,dirs,wns,z,depth)
+function trm=dspy(ffreqs,dirs,wns,z,depth)
 
 Kz=cosh(z*wns)./sinh(depth*wns);
 %include a maximum cuttoff for the velocity response function
